@@ -94,7 +94,7 @@ svg:hover{
     border-radius: 15px;
     right: 15rem;
     height: fit-content;
-    top: -100%; /* Start off the top of the screen */
+    top: -100%;
     width: 60%;
     padding: 2rem;
     background-color: #1c1c1c;
@@ -106,34 +106,32 @@ svg:hover{
 }
 
 .content-section.active {
-    top: 50%; /* Center on Y-axis */
-    transform: translateY(-50%); /* Adjust for perfect centering */
+    top: 50%;
+    transform: translateY(-50%);
     visibility: visible;
-    opacity: 1; /* Ensure it's visible */
+    opacity: 1;
 }
 
 .content-section.exiting {
-    top: 120%; /* Move down off the screen */
-    transform: none; /* Remove the centering adjustment */
+    top: 120%;
+    transform: none;
     opacity:0;
     transition: 1s;
 }
 
 .content-section.reseting {
-    visibility: hidden; /* Hide before resetting */
-    opacity: 0; /* Ensure it's invisible */
-    top: -100%; /* Reset to original position */
+    visibility: hidden;
+    opacity: 0;
+    top: -100%;
 }
 
 .content-section > h2{
     text-align: center;
 }
 
-
-/* Add this to the existing CSS */
 a.active-link {
-    color: white; /* Same color as hover */
-    text-decoration: none; /* Remove the underline */
+    color: white;
+    text-decoration: none;
     transition: .5s;
 }
 
@@ -181,7 +179,7 @@ nav{
 
 #projects > a{
     margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
     width: 25%;
 }
 
@@ -264,6 +262,13 @@ nav{
     }
 }
 
+@media only screen and (max-width: 700px) {
+    nav > a{
+        font-size: 25px;
+    }
+
+}
+
 @media only screen and (max-width: 600px) {
     h1{
         font-size: 30px;
@@ -275,22 +280,18 @@ nav{
 
     nav > a{
         font-size: 20px;
+        margin-right: .5rem;
     }
 
     a > svg{
         width: 1.5rem;
         height: 1.5rem;
     }
-
 }
 
 @media only screen and (max-width: 450px) {
     .firstSection > div{
         margin: 3rem 1rem;
-    }
-
-    nav > a{
-        margin-right: .5rem;
     }
 }
 
@@ -301,5 +302,10 @@ nav{
 
     nav > a{
         margin-right: .5rem;
+        font-size: 18px;
+    }
+
+    .git{
+        top: 5px;
     }
 }
