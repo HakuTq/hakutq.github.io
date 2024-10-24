@@ -1,0 +1,305 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: #232323;
+    min-height: 100vh;
+    min-width: 100vw;
+    color: white;
+    overflow: hidden;
+    font-family: "Inter", sans-serif;
+}
+
+svg#topographic {
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+  svg#topographic path {
+    fill: #1c1c1c;
+    stroke-width: 1;
+    stroke-miterlimit: 0;
+    stroke: #393939;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 1000;
+    -webkit-animation: dash 10s linear alternate infinite;
+            animation: dash 10s linear alternate infinite;
+  }
+  @-webkit-keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+.firstSection > div{
+    z-index: 1;
+    position: relative;
+    margin: 6rem 10rem;
+}
+
+h1{
+    font-size: 48px;
+    margin-bottom: 3rem;
+    font-weight: bolder;
+}
+
+a{
+    display:block;
+    margin-bottom: 1rem;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color:gray;
+    transition: .5s;
+    width: fit-content;
+}
+
+a:hover{
+    color:white;
+    transition: .5s;
+}
+
+.git{
+    margin: 3rem 0;
+    padding: 0;
+    height: fit-content;
+    width: fit-content;
+}
+
+svg{
+    transition: .5s;
+}
+
+svg:hover{
+    fill: white;
+    transition: .5s;
+}
+
+.content-section {
+    position: absolute;
+    border-radius: 15px;
+    right: 15rem;
+    height: fit-content;
+    top: -100%; /* Start off the top of the screen */
+    width: 60%;
+    padding: 2rem;
+    background-color: #1c1c1c;
+    color: white;
+    z-index: 2;
+    transition: top 1s ease;
+    filter: drop-shadow(0px 0px 25px #000000);
+    opacity:0;
+}
+
+.content-section.active {
+    top: 50%; /* Center on Y-axis */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    visibility: visible;
+    opacity: 1; /* Ensure it's visible */
+}
+
+.content-section.exiting {
+    top: 120%; /* Move down off the screen */
+    transform: none; /* Remove the centering adjustment */
+    opacity:0;
+    transition: 1s;
+}
+
+.content-section.reseting {
+    visibility: hidden; /* Hide before resetting */
+    opacity: 0; /* Ensure it's invisible */
+    top: -100%; /* Reset to original position */
+}
+
+.content-section > h2{
+    text-align: center;
+}
+
+
+/* Add this to the existing CSS */
+a.active-link {
+    color: white; /* Same color as hover */
+    text-decoration: none; /* Remove the underline */
+    transition: .5s;
+}
+
+#contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#contact > svg{
+    margin: 1rem 0;
+    fill: white;
+}
+
+#contact > h2{
+    margin-bottom: 3rem; 
+    font-size: 40px;
+}
+
+#projects > h1{
+    margin: 0;
+}
+
+#projects > a > h1{
+    margin:0;
+    font-weight: bold;
+    color:white;
+}
+
+nav{
+    display:flex;
+    flex-direction: column;
+    align-items: baseline;
+    align-content: center;
+}
+
+#projects{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#projects > a{
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    width: 25%;
+}
+
+#projects > a:hover{
+    filter: drop-shadow(0px 0px 10px #ffffff);
+}
+
+#projects > a > img{
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (max-width: 1920px) {
+    .content-section{
+        right: 10rem;
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .content-section{
+        right: 6rem;
+        width: 40%;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    .firstSection > div{
+        margin: 6rem 6rem;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .content-section{
+        right: 3rem;
+        width: 40%;
+    }
+
+    .firstSection > div{
+        margin: 6rem 3rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    nav{
+        flex-direction: row;
+    }
+
+    .content-section{
+        transform: translate(50%, -50%) !important;
+        right: 50%;
+        width: 80%;
+        padding: 1rem;
+        margin-top: 4rem;
+    }
+
+    .firstSection > div{
+        margin: 3rem 3rem;
+    }
+
+    .firstSection h1{
+        margin-bottom: 1rem;
+    }
+
+    svg#topographic{
+        display: none;
+    }
+
+    nav > a:last-child{
+        margin: 0;
+        right: 0    ;
+        position: absolute;
+    }
+
+    nav > a{
+        display: inline;
+        margin-right: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1{
+        font-size: 30px;
+    }
+
+    h2{
+        font-size: 20px !important;
+    }
+
+    nav > a{
+        font-size: 20px;
+    }
+
+    a > svg{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+}
+
+@media only screen and (max-width: 450px) {
+    .firstSection > div{
+        margin: 3rem 1rem;
+    }
+
+    nav > a{
+        margin-right: .5rem;
+    }
+}
+
+@media only screen and (max-width: 380px) {
+    .firstSection > div{
+        margin: 3rem .5rem;
+    }
+
+    nav > a{
+        margin-right: .5rem;
+    }
+}
