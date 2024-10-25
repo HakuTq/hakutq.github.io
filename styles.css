@@ -129,6 +129,10 @@ svg:hover{
     text-align: center;
 }
 
+.content-section > p{
+    text-align: center;
+}
+
 a.active-link {
     color: white;
     text-decoration: none;
