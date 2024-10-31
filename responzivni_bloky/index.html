@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    
+    <link rel="stylesheet" href="styles.css" type="text/css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test web</title>
+</head>
+<body>
+    <div class="navbar">
+        <div class="container">
+            <div class="navbar__burger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="navbar__nav">
+                <span class="text">Home</span>
+                <span class="text">Kontakt</span>
+                <span class="text">Test</span>
+            </div>
+        </div>
+    </div>
+    <section class="main">
+        <div class="container">
+            <h1 class="text main-heading">Nadpis č. 1</h1>
+            <div class="blocks-row">
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+                <div class="block">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <form action="" class="form">
+
+        <label for="cislo1">Cislo 1</label>
+        <input type="number" required id="cislo1">
+        <label for="cislo1">Cislo 2</label>
+        <input type="number" required id="cislo2">
+        <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <button type="submit" id="calcButton">odeslat</button>
+    </form>
+    <p id="calculation"></p>
+
+
+    <script>
+        var calcBtn = document.getElementById("calcButton");
+        calcBtn.addEventListener("click", calc);
+    
+        function calc(event) {
+            event.preventDefault();
+    
+            var number1 = Number(document.getElementById("cislo1").value);
+            var number2 = Number(document.getElementById("cislo2").value);
+            var operator = document.getElementById("operation").value;
+            var vysledek;
+    
+            if (operator === "+") {
+                vysledek = number1 + number2;
+            } else if (operator === "-") {
+                vysledek = number1 - number2;
+            } else if (operator === "*") {
+                vysledek = number1 * number2;
+            } else {
+                if (number2 === 0) {
+                    vysledek = "Nelze delit nulou";
+                } else {
+                    vysledek = number1 / number2;
+                }
+            }
+    
+            document.getElementById("calculation").textContent = vysledek;
+        }
+    </script>
+</body>
+</html>

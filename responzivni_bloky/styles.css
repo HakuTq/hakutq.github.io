@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    font-family: 'Trebuchet MS';   
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.navbar {
+    width: 100%;
+    height: 6rem;
+    background: #333;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.navbar__burger {
+    width: 50px;
+}
+
+.navbar__burger div {
+    width: 100%;
+    height: 5px;
+    background: #fff;
+}
+
+.navbar__burger div:not(:first-child) {
+    margin-top: 5px;
+}
+
+.navbar__nav{
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar__nav span {
+    color: #fff;
+    font-size: 2rem;
+    
+}
+
+.main {
+    padding-top: 50px;
+}
+
+.main-heading {
+    font-size: 60px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 2000px) {
+    .main-heading {
+        font-size: 80px;
+        color: red;
+    }
+}
+
+.blocks-row {
+    width: calc(100% + 20px);
+    margin-left: -20px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.block {
+    width: calc(25% - 20px);
+    margin-top: 20px;
+    margin-left: 20px;
+    background: #333;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.form {
+    margin-top: 150px;
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#calculation{
+    text-align: center;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+
+@media only screen and (max-width: 1536px) { 
+    .block {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media only screen and (max-width: 1024px) { 
+    .navbar{
+        height: 5rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .block {
+        width: calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .block {
+        width: 100%;
+    }
+
+    .main-heading{
+        font-size: 48px;
+    }
+
+    .navbar__nav{
+        gap: .5rem;
+    }
+    
+    .navbar__nav span {
+        font-size: 1.5rem;
+    }
+
+    .blocks-row{
+        width: 100%;
+        margin-left: -10px;
+    }
+}
+
+@media only screen and (max-width: 376px) { 
+    .main-heading{
+        font-size: 40px;
+    }
+
+    .navbar__nav{
+        display: none;
+    }
+}
