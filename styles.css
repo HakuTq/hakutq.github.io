@@ -125,6 +125,10 @@ svg:hover{
     top: -100%;
 }
 
+.content-section > h1{
+    text-align: center;
+}
+
 .content-section > h2{
     text-align: center;
 }
@@ -192,6 +196,11 @@ nav{
     width: 25%;
 }
 
+#termio-link{
+    width: 100% !important;
+    text-align: center;
+}
+
 #projects > a:hover{
     filter: drop-shadow(0px 0px 10px #ffffff);
 }
@@ -199,6 +208,24 @@ nav{
 #projects > a > img{
     width: 100%;
     height: auto;
+    margin-bottom: 2rem;
+}
+
+#projects > p:last-child{
+    margin-top: 1rem;
+}
+
+.content-section > b{
+    text-align: center;
+}
+
+.content-section > a > p{
+    text-align: center;
+    width: 100%;
+}
+
+#about > p{
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 1920px) {
@@ -305,6 +332,26 @@ nav{
 @media only screen and (max-width: 450px) {
     .firstSection > div{
         margin: 3rem 1rem;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 18px !important;
+    }
+
+    #termi-link{
+        font-size: 18px;
+    }
+
+    #about > p{
+        margin-top: .3rem;
+    }
+
+    #projects > a > img {
+        margin-bottom: .5rem;
     }
 }
 
